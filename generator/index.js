@@ -3,10 +3,7 @@ module.exports = (api, options, rootOptions) => {
     api.render('../template')
     // 修改 `package.json` 里的字段
     api.extendPackage({
-        repository: {
-            "type": "git",
-            "url": "git+https://github.com/qianfan123/fant-cli"
-        },
+       
         "scripts": {
             "build": "vue-cli-service build",
             "uat": "vue-cli-service build --mode uat",
