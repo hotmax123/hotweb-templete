@@ -1,4 +1,4 @@
-const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   publicPath: './',
@@ -6,8 +6,8 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        // additionalData: '@import "~@/assets/styles/var.scss";'
-        additionalData: '@import "~@/assets/styles/var.scss";'
+        // additionalData: '@import "~@/assets/styles/var.scss"'
+        additionalData: '@import "~@/assets/styles/var.scss"'
       }
     }
   },
@@ -21,15 +21,15 @@ module.exports = {
           threshold: 10240
           // 其余配置查看compression-webpack-plugin
         })
-      );
+      )
     }
   },
   // chainWebpack: config => {
   //   config
   //     .plugin('webpack-bundle-analyzer')
-  //     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin);
+  //     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
   // },
 
   runtimeCompiler: true,
   productionSourceMap: false
-};
+}

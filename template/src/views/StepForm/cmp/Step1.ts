@@ -1,11 +1,11 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component({
   components: {}
 })
 export default class Step1 extends Vue {
-  $refs: any;
-  active: number = 0; // 激活状态的步骤
+  $refs: any
+  active: number = 0 // 激活状态的步骤
   form = {
     // form表单绑定的内容
     code: '', // 门店code
@@ -14,7 +14,7 @@ export default class Step1 extends Vue {
     mobile: '', // 门店手机号
     type: '', // 门店类型
     address: '' // 门店地址
-  };
+  }
 
   optionList = [
     {
@@ -36,7 +36,7 @@ export default class Step1 extends Vue {
       // 是否设为默认
       isDefault: false
     }
-  ];
+  ]
 
   rules = {
     code: [{ required: true, message: '请输入门店编码', trigger: 'blur' }],
@@ -45,7 +45,7 @@ export default class Step1 extends Vue {
     mobile: [{ required: false, message: '请输入联系方式', trigger: 'blur' }],
     type: [{ required: true, message: '请选择门店类型', trigger: 'blur' }],
     address: [{ required: false, message: '请选择门店地址', trigger: 'blur' }]
-  };
+  }
 
   /**
    * 下一步
@@ -53,18 +53,18 @@ export default class Step1 extends Vue {
   doNext() {
     this.$refs['step1'].validate((valid: any) => {
       if (valid) {
-        this.$emit('nextStep');
+        this.$emit('nextStep')
       } else {
-        console.log('error submit!!');
-        return false;
+        console.log('error submit!!')
+        return false
       }
-    });
+    })
   }
 
   /**
    * 上一步
    */
   doPreve() {
-    this.$emit('prevStep');
+    this.$emit('prevStep')
   }
 }

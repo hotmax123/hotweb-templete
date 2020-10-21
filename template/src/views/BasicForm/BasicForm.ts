@@ -1,8 +1,8 @@
-import { Component, Vue } from 'vue-property-decorator';
-import PageWrapper from '@/components/page-wrapper/PageWrapper.vue';
-import DetailView from '@/components/detail-view/DetailView.vue';
-import ListView from '@/components/list-view/ListView.vue';
-import DetailCard from '@/components/detail-card/DetailCard.vue';
+import { Component, Vue } from 'vue-property-decorator'
+import PageWrapper from '@/components/page-wrapper/PageWrapper.vue'
+import DetailView from '@/components/detail-view/DetailView.vue'
+import ListView from '@/components/list-view/ListView.vue'
+import DetailCard from '@/components/detail-card/DetailCard.vue'
 
 @Component({
   components: { PageWrapper, DetailView, DetailCard, ListView }
@@ -16,7 +16,7 @@ export default class BasicForm extends Vue {
     mobile: '', // 门店手机号
     type: '', // 门店类型
     address: '' // 门店地址
-  };
+  }
 
   optionList = [
     {
@@ -38,7 +38,7 @@ export default class BasicForm extends Vue {
       // 是否设为默认
       isDefault: false
     }
-  ];
+  ]
 
   rules = {
     code: [{ required: true, message: '请输入门店编码', trigger: 'blur' }],
@@ -47,11 +47,11 @@ export default class BasicForm extends Vue {
     mobile: [{ required: false, message: '请输入联系方式', trigger: 'blur' }],
     type: [{ required: true, message: '请选择门店类型', trigger: 'blur' }],
     address: [{ required: false, message: '请选择门店地址', trigger: 'blur' }]
-  };
+  }
   /**
    * 后退
    */
   doBack() {
-    this.$router.go(-1);
+    this.$router.go(-1)
   }
 }

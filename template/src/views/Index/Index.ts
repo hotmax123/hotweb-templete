@@ -1,6 +1,6 @@
-import { Component, Vue } from 'vue-property-decorator';
-import BasicLayout from '@/layouts/BasicLayoutSingle/BasicLayout.vue';
-import { abnormalType } from '@/model/example/AbnormalType';
+import { Component, Vue } from 'vue-property-decorator'
+import BasicLayout from '@/layouts/BasicLayoutSingle/BasicLayout.vue'
+import { abnormalType } from '@/model/example/AbnormalType'
 
 @Component({
   components: { BasicLayout }
@@ -79,35 +79,35 @@ export default class Index extends Vue {
           }
         ]
       }
-    ];
+    ]
   }
 
   /**
    * 激活状态的菜单
    */
   get activeMenu() {
-    return this.$route.name;
+    return this.$route.name
   }
 
   /**
    * 页面路径
    */
   get key() {
-    return this.$route.path;
+    return this.$route.path
   }
 
   /**
    * 登出事件
    */
   doLogout() {
-    console.log('change...');
+    console.log('change...')
   }
 
   handleOpen(key: string, keyPath: string) {
-    console.log(key, keyPath);
+    console.log(key, keyPath)
   }
 
   handleClose(key: string, keyPath: string) {
-    console.log(key, keyPath);
+    console.log(key, keyPath)
   }
 }

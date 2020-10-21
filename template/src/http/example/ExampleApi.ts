@@ -1,6 +1,6 @@
-import ApiClient from '@/http/ApiClient';
-import BaseResponse from '@/model/common/BaseResponse';
-import ListModel from '@/model/example/ListModel';
+import ApiClient from '@/http/ApiClient'
+import BaseResponse from '@/model/common/BaseResponse'
+import ListModel from '@/model/example/ListModel'
 
 export default class ExampleApi {
   /**
@@ -10,8 +10,8 @@ export default class ExampleApi {
     return ApiClient.server()
       .post('/example/getList', { applyDate: applyDate }, {})
       .then(res => {
-        return res.data;
-      });
+        return res.data
+      })
   }
   /**
    * 查询商品单据列表
@@ -20,8 +20,8 @@ export default class ExampleApi {
     return ApiClient.server()
       .post('/example/getSkuList', { applyDate: applyDate }, {})
       .then(res => {
-        return res.data;
-      });
+        return res.data
+      })
   }
 
   /**
@@ -41,7 +41,7 @@ export default class ExampleApi {
         }
       })
       .then(res => {
-        return res.data;
-      });
+        return res.data
+      })
   }
 }

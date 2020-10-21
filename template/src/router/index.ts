@@ -1,9 +1,9 @@
-import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
-import NProgress from 'nprogress'; // 顶部进度条
-import 'nprogress/nprogress.css'; // 进度条样式
-NProgress.configure({ showSpinner: false }); // 禁用加载动画
-Vue.use(VueRouter);
+import Vue from 'vue'
+import VueRouter, { RouteConfig } from 'vue-router'
+import NProgress from 'nprogress' // 顶部进度条
+import 'nprogress/nprogress.css' // 进度条样式
+NProgress.configure({ showSpinner: false }) // 禁用加载动画
+Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
@@ -68,19 +68,19 @@ const routes: Array<RouteConfig> = [
       }
     ]
   }
-];
+]
 
 const router = new VueRouter({
   routes
-});
+})
 
 router.beforeEach((to, from, next) => {
-  NProgress.start();
-  return next();
-});
+  NProgress.start()
+  return next()
+})
 
 router.afterEach(() => {
-  NProgress.done();
-});
+  NProgress.done()
+})
 
-export default router;
+export default router
