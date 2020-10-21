@@ -2,10 +2,10 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import Fant from 'fant-ui';
-import 'fant-ui/packages/theme-chalk/src/index.scss';
+import HotwebUI from 'hotweb-ui';
+import 'hotweb-ui/packages/theme-chalk/src/index.scss';
 process.env.NODE_ENV === 'development' && require('./mock/mock');
-Vue.use(Fant);
+Vue.use(HotwebUI);
 Vue.config.productionTip = false;
 
 new Vue({

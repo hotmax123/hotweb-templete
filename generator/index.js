@@ -8,7 +8,7 @@ module.exports = (api, options, rootOptions) => {
             "build": "vue-cli-service build",
             "uat": "vue-cli-service build --mode uat",
             "production": "vue-cli-service build --mode production",
-            "dev": "vue-cli-service dev"
+            "dev": "vue-cli-service serve"
           },
           "dependencies": {
             "@types/nprogress": "^0.2.0",
