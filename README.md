@@ -1,4 +1,4 @@
-# A Template Based on Fant
+# A Template Based on hotweb-ui
 
 ## Usage
 

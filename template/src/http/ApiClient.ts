@@ -1,6 +1,6 @@
 import axios from 'axios';
 import store from '../store';
-import { CommonUtil } from 'fant-ui';
+import { CommonUtil } from 'hotweb-ui';
 
 const qs = require('qs');
 axios.defaults.paramsSerializer = params => {
