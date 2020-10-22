@@ -4,7 +4,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 //     'success': 'el-icon-success',
 //     'warning': 'el-icon-warning',
 //     'error': 'el-icon-error'
-// }
+// };
 @Component({
   components: {}
 })

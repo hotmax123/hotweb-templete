@@ -186,7 +186,7 @@ module.exports = {
     'quote-props': 0,
     'quotes': [2, 'single', 'avoid-escape'],
     'radix': 2,
-    'semi': [2, 'always'],
+    'semi': 0,
     'semi-spacing': 0,
     'sort-vars': 0,
     'keyword-spacing': 2,

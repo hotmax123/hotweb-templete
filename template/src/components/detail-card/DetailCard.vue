@@ -15,7 +15,6 @@
         <slot name="left"></slot>
       </div>
       <!-- 内容区左部 结束 -->
-
       <!-- 内容区右部（用于显示卡片主内容） 开始 -->
       <div class="card-right" v-if="$slots.right">
         <slot name="right"></slot>

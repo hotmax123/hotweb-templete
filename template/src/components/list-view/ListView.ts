@@ -12,7 +12,6 @@ class FilterParam {
 class SortParam {
   // 排序字段
   property: Nullable<string> = null
-
   // 排序方式，默认倒叙
   direction: Nullable<string> = null
 }
@@ -42,7 +41,7 @@ export default class ListView extends Vue {
   @Prop({ type: Array, default: [] }) data: any[]
   @Prop() emptyText: string
   @Prop() defaultSort: any // 默认排序
-  @Prop() rowKey: any // 行id 配合reserve-selection使用
+  @Prop({ type: String, default: 'id' }) rowKey: any // 行id 配合reserve-selection使用
   @Prop({ type: Boolean, default: true }) reserveSelection: boolean // 跨页选中
   @Prop({ type: Boolean, default: false }) smallPage: boolean
   @Prop({ type: Boolean, default: false }) highlightCurrentRow: boolean

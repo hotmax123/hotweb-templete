@@ -2,9 +2,9 @@
   <div class="basic-layout">
     <div class="basic-layout-sider">
       <div class="logo">
-        <img class="logo-img" src="@/assets/logo.png" alt="logo" />
+        <p>后台管理系统</p>
       </div>
-      <slot name="sider"> </slot>
+      <slot name="sider"></slot>
     </div>
     <div class="basic-layout-container">
       <header class="header">
@@ -20,7 +20,6 @@
 
 <style lang="scss" scoped>
 .basic-layout {
-  background: $--color-primary;
   display: flex;
   width: 100%;
   height: 100vh;
@@ -31,18 +30,15 @@
     width: 200px;
     height: 100%;
     flex: 0 0 auto;
-    background: $--color-text-primary;
+    background: #fff;
     overflow-y: auto;
     .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 200px;
       height: 60px;
-      .logo-img {
-        width: 86px;
-        height: auto;
-      }
+      line-height: 60px;
+      color: #000;
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: 20px;
     }
     .el-menu-vertical-demo {
       width: 200px;

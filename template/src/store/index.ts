@@ -1,13 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { state, getters, actions, mutations } from './global'
+
+import StoragePlugin from './StoragePlugin.js'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    user: {}
-  },
-  mutations: {},
-  actions: {},
+const store = new Vuex.Store({
+  plugins: [StoragePlugin],
+
+  state,
+  getters,
+  mutations,
+  actions,
+
   modules: {}
 })
+
+export default store
