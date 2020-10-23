@@ -1,3 +1,171 @@
 $--font-path: '~hotweb-ui/lib/theme-chalk/fonts';
 @import '~hotweb-ui/packages/theme-chalk/src/common/var';
 @import './transition.scss';
+
+.hm-flex-row {
+    display: flex;
+    align-items: center;
+  }
+  .hm-flex-row-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hm-flex-row-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .hm-flex-row-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  // 纵向布局
+  .hm-flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  // 纵向居中
+  .hm-flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  // 增加点击区域的热点,设置在view上，不能用于image
+  .hm-click-expand {
+    position: relative;
+  }
+  .hm-click-expand::before {
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+  }
+  
+  @for $i from 0 through 5 {
+    .hm-flex-#{$i} {
+      flex: $i;
+    }
+  }
+  
+  /* 隐藏scrollview的滚动条 */
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+  
+  /*一个横线*/
+  @for $i from 1 through 5 {
+    .hm-line-#{$i} {
+      height: 1px;
+      transform: scaleY(1 / $i);
+      background-color: #ddd;
+    }
+  }
+  // 间隙
+  @for $i from 1 through 51 {
+    .hm-gap-#{$i} {
+      height: $i + px;
+      background-color: #f7f7f7;
+    }
+  }
+  
+  // 显示几行
+  @for $i from 1 through 11 {
+    .hm-clamp-#{$i} {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      white-space: pre-line;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: $i;
+    }
+  }
+  
+  // image大小
+  @for $i from 10 through 121 {
+    .hm-image-#{$i} {
+      width: $i + px;
+      height: $i + px;
+    }
+  }
+  
+  // 定义字体(px)单位
+  @for $i from 9 to 100 {
+    .hm-font-#{$i} {
+      font-size: $i + px;
+    }
+  }
+  
+  // 字重
+  @for $i from 300 to 701 {
+    .hm-weight-#{$i} {
+      font-weight: $i;
+    }
+  }
+  
+  @for $i from 1 to 100 {
+    .hm-br-#{$i} {
+      border-radius: $i + px;
+    }
+  }
+  @for $i from 1 to 100 {
+    .hm-ml-#{$i} {
+      margin-left: $i + px;
+    }
+  }
+  @for $i from 1 to 100 {
+    .hm-mt-#{$i} {
+      margin-top: $i + px;
+    }
+  }
+  @for $i from 1 to 100 {
+    .hm-mr-#{$i} {
+      margin-right: $i + px;
+    }
+  }
+  @for $i from 1 to 100 {
+    .hm-mb-#{$i} {
+      margin-bottom: $i + px;
+    }
+  }
+  
+  @for $i from 1 to 100 {
+    .hm-pl-#{$i} {
+      padding-left: $i + px;
+    }
+  }
+  @for $i from 1 to 100 {
+    .hm-pt-#{$i} {
+      padding-top: $i + px;
+    }
+  }
+  @for $i from 1 to 100 {
+    .hm-pr-#{$i} {
+      padding-right: $i + px;
+    }
+  }
+  @for $i from 1 to 100 {
+    .hm-pb-#{$i} {
+      padding-bottom: $i + px;
+    }
+  }
+  
+  @for $i from 1 to 10 {
+    .hm-opacity-#{$i} {
+      opacity: $i * 0.1;
+    }
+  }
+  
+  $aligns: left, right, center;
+  @each $value in $aligns {
+    .hm-ta-#{$value} {
+      text-align: $value;
+    }
+  }
