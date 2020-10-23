@@ -48,7 +48,13 @@ module.exports = (api, options, rootOptions) => {
             "webpack-bundle-analyzer": "^3.8.0"
           },
         config: {},
-        gitHooks: {}
+        gitHooks: {},
+        "lint-staged": {
+          "*.{js,jsx,vue,ts,tsx}": [
+            "vue-cli-service lint",
+            "git add"
+          ]
+        }
     })
 
     if (options.elementUI) {

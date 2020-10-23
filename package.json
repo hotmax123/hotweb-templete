@@ -1,5 +1,5 @@
 {
-  "name": "hotweb-ui",
+  "name": "hotweb-templete",
   "version": "1.0.0",
   "description": "基于hotweb-ui组件库的模板项目",
   "main": "prompts.js",

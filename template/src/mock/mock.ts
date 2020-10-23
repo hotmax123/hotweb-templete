@@ -2,7 +2,6 @@ import Mock from 'mockjs'
 import BaseResponse from '@/model/common/BaseResponse'
 import ListModel from '@/model/example/ListModel'
 const Random = Mock.Random
-const baseUrl = process.env.VUE_APP_BASEURL
 
 /**
  * 使用mockjs进行拦截请求模拟数据，具体使用方法可至http://mockjs.com/进行查看

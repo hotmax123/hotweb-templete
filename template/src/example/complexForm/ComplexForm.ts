@@ -43,7 +43,6 @@ export default class ComplexForm extends Vue {
   ]
 
   rules = {
-    // 表单校验信息，具体使用方法可以参考http://download.qianfan123.com/fant3-web/test/index.html#/zh-CN/component/form
     code: [{ required: true, message: '请输入门店编码', trigger: 'blur' }],
     name: [{ required: true, message: '请输入门店名称', trigger: 'blur' }],
     contacts: [{ required: true, message: '请输入联系人', trigger: 'blur' }],

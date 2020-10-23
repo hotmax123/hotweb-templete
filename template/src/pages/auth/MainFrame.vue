@@ -4,8 +4,7 @@
     <!-- 页面header 开始 -->
     <template slot="header">
       <div class="header-left">
-        <!-- <img src="@/assets/logo.png" class="header-left-logo" />
-        <span>Fant Admin</span> -->
+        
       </div>
       <el-dropdown class="header-right" trigger="click" @command="doLogout">
         <div class="user-name">
