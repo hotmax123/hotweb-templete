@@ -10,6 +10,7 @@
         <el-button type="primary" size="medium" @click="doEdit">编辑</el-button>
         <el-button size="medium" @click="doBack">返回</el-button>
       </div>
+
       <!-- 页眉按钮组 结束 -->
     </template>
     <!-- 异常页页眉 结束 -->
@@ -28,13 +29,7 @@
           </p>
           <!-- 异常提示操作按钮 -->
           <div class="hint_operation">
-            <el-button
-              class="main_button"
-              type="primary"
-              size="medium"
-              @click="mainBtn"
-              >主要按钮</el-button
-            >
+            <el-button class="main_button" type="primary" size="medium" @click="mainBtn">主要按钮</el-button>
             <el-button class="normal_button">默认按钮</el-button>
           </div>
         </div>

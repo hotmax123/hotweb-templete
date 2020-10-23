@@ -61,7 +61,7 @@ export default class ApiClient {
           } else {
             error.message = response.status + '服务器内部异常'
           }
-          (error as any).response = response.data
+          ;(error as any).response = response.data
           throw error
         }
       },

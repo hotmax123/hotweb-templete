@@ -3,9 +3,7 @@
   <basic-layout>
     <!-- 页面header 开始 -->
     <template slot="header">
-      <div class="header-left">
-        
-      </div>
+      <div class="header-left"></div>
       <el-dropdown class="header-right" trigger="click" @command="doLogout">
         <div class="user-name">
           <img src="@/assets/img/common/ic_portrait@2x.png" class="user-name-icon" />
@@ -17,7 +15,6 @@
       </el-dropdown>
     </template>
     <!-- 页面header 结束 -->
-
     <!-- 侧边导航 开始 -->
     <template slot="sider">
       <el-menu
@@ -50,7 +47,6 @@
       </el-menu>
     </template>
     <!-- 侧边导航 结束 -->
-
     <!-- 容器主体 -->
     <template slot="main">
       <keep-alive>
@@ -64,9 +60,7 @@
     </template>
   </basic-layout>
 </template>
-
 <script lang="ts" src="./MainFrame.ts"></script>
-
 <style lang="scss" scoped>
 .header-left {
   display: flex;

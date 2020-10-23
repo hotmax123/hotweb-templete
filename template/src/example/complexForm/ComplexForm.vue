@@ -7,7 +7,6 @@
       <!-- 页眉标题 结束 -->
     </template>
     <!-- 表单页眉 结束 -->
-
     <!-- 表单主体 开始 -->
     <template slot="body">
       <!-- 详情视图 开始（可以作为详情与表单的容器） -->
@@ -16,19 +15,11 @@
         <!-- 不同type对应不同颜色，可以作为表单页面状态的容器 -->
         <detail-card title="基础信息">
           <template slot="right">
-            <el-form
-              :model="form"
-              :rules="rules"
-              :inline-message="true"
-              ref="basicForm"
-              label-width="120px"
-            >
+            <el-form :model="form" :rules="rules" :inline-message="true" ref="basicForm" label-width="120px">
               <el-row>
                 <el-col :span="12">
                   <el-form-item label="商品名称" prop="code">
-                    <span class="tip"
-                      >- 系统自动生成，可修改，最多不超过10个字符</span
-                    >
+                    <span class="tip">- 系统自动生成，可修改，最多不超过10个字符</span>
                     <el-input v-model="form.code"></el-input>
                   </el-form-item>
                 </el-col>
@@ -42,9 +33,7 @@
               <el-row>
                 <el-col :span="12">
                   <el-form-item label="商品编码" prop="code">
-                    <span class="tip"
-                      >- 系统自动生成，可修改，最多不超过10个字符</span
-                    >
+                    <span class="tip">- 系统自动生成，可修改，最多不超过10个字符</span>
                     <el-input v-model="form.code"></el-input>
                   </el-form-item>
                 </el-col>
@@ -58,14 +47,7 @@
               <el-row>
                 <el-col :span="12">
                   <el-form-item label="商品类目" prop="code">
-                    <el-select
-                      v-model="form.type"
-                      ref="type"
-                      filterable
-                      clearable
-                      value-key="uuid"
-                      placeholder="请下拉选择或输入查询"
-                    >
+                    <el-select v-model="form.type" ref="type" filterable clearable value-key="uuid" placeholder="请下拉选择或输入查询">
                       <el-option
                         v-for="item in optionList"
                         :key="item.uuid"
@@ -79,14 +61,7 @@
                 </el-col>
                 <el-col :span="12">
                   <el-form-item label="商品类型" prop="name">
-                    <el-select
-                      v-model="form.type"
-                      ref="type"
-                      filterable
-                      clearable
-                      value-key="uuid"
-                      placeholder="请下拉选择或输入查询"
-                    >
+                    <el-select v-model="form.type" ref="type" filterable clearable value-key="uuid" placeholder="请下拉选择或输入查询">
                       <el-option
                         v-for="item in optionList"
                         :key="item.uuid"
@@ -120,10 +95,7 @@
               <el-row>
                 <el-col :span="12">
                   <el-form-item label="商品主图" prop="code">
-                    <span class="tip"
-                      >-
-                      图片上传建议：688*424像素，PNG/JPG格式，大小不超过1M</span
-                    >
+                    <span class="tip">- 图片上传建议：688*424像素，PNG/JPG格式，大小不超过1M</span>
                     <el-upload
                       action="https://jsonplaceholder.typicode.com/posts/"
                       list-type="picture-card"
@@ -138,10 +110,7 @@
                 </el-col>
                 <el-col :span="12">
                   <el-form-item label="商品视频" prop="code">
-                    <span class="tip"
-                      >- 视频比例建议1:1，支持
-                      wmv/mp4/rmvb/avi；支持30秒以内时长；大小不超过30M</span
-                    >
+                    <span class="tip">- 视频比例建议1:1，支持 wmv/mp4/rmvb/avi；支持30秒以内时长；大小不超过30M</span>
                     <el-upload
                       action="https://jsonplaceholder.typicode.com/posts/"
                       list-type="picture-card"

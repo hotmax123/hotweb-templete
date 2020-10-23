@@ -58,81 +58,39 @@
           <template>
             <el-col :span="6">
               <el-form-item label="订单号">
-                <el-date-picker
-                  type="date"
-                  ref="applyDate"
-                  v-model="applyDate"
-                  value-format="yyyy-MM-dd"
-                  placeholder="申请时间"
-                ></el-date-picker>
+                <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
               </el-form-item>
             </el-col>
             <el-col :span="6">
               <el-form-item label="订单号">
-                <el-date-picker
-                  type="date"
-                  ref="applyDate"
-                  v-model="applyDate"
-                  value-format="yyyy-MM-dd"
-                  placeholder="申请时间"
-                ></el-date-picker>
+                <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
               </el-form-item>
             </el-col>
             <el-col :span="6">
               <el-form-item label="订单号">
-                <el-date-picker
-                  type="date"
-                  ref="applyDate"
-                  v-model="applyDate"
-                  value-format="yyyy-MM-dd"
-                  placeholder="申请时间"
-                ></el-date-picker>
+                <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
               </el-form-item>
             </el-col>
           </template>
           <template slot="closed">
             <el-col :span="6">
               <el-form-item label="订单号">
-                <el-date-picker
-                  type="date"
-                  ref="applyDate"
-                  v-model="applyDate"
-                  value-format="yyyy-MM-dd"
-                  placeholder="申请时间"
-                ></el-date-picker>
+                <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
               </el-form-item>
             </el-col>
             <el-col :span="6">
               <el-form-item label="订单号">
-                <el-date-picker
-                  type="date"
-                  ref="applyDate"
-                  v-model="applyDate"
-                  value-format="yyyy-MM-dd"
-                  placeholder="申请时间"
-                ></el-date-picker>
+                <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
               </el-form-item>
             </el-col>
             <el-col :span="6">
               <el-form-item label="订单号">
-                <el-date-picker
-                  type="date"
-                  ref="applyDate"
-                  v-model="applyDate"
-                  value-format="yyyy-MM-dd"
-                  placeholder="申请时间"
-                ></el-date-picker>
+                <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
               </el-form-item>
             </el-col>
             <el-col :span="6">
               <el-form-item label="订单号">
-                <el-date-picker
-                  type="date"
-                  ref="applyDate"
-                  v-model="applyDate"
-                  value-format="yyyy-MM-dd"
-                  placeholder="申请时间"
-                ></el-date-picker>
+                <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
               </el-form-item>
             </el-col>
           </template>
@@ -142,13 +100,7 @@
 
       <!-- 列表主体表格 开始 -->
       <template slot="body">
-        <list-view
-          ref="orderDataList"
-          :selectable="true"
-          :data="orderDataList"
-          :total="orderTotal"
-          @load="doListLoad"
-        >
+        <list-view ref="orderDataList" :selectable="true" :data="orderDataList" :total="orderTotal" @load="doListLoad">
           <template slot="actions">
             <div class="operation">
               <el-button size="small">批量删除</el-button>
@@ -160,28 +112,19 @@
               <img style="width:96px;" :src="scope.row.appId" />
             </template>
           </el-table-column>
-          <el-table-column prop="flowNo" label="订单号"> </el-table-column>
-          <el-table-column prop="sysState" label="订单状态"> </el-table-column>
-          <el-table-column prop="type" label="订单类型"> </el-table-column>
-          <el-table-column prop="memberInfo" label="客户信息">
-          </el-table-column>
-          <el-table-column prop="consignee" label="收货人信息">
-          </el-table-column>
-          <el-table-column prop="realAmount" label="下单金额（元）">
-          </el-table-column>
-          <el-table-column prop="created" label="下单时间"> </el-table-column>
+          <el-table-column prop="flowNo" label="订单号"></el-table-column>
+          <el-table-column prop="sysState" label="订单状态"></el-table-column>
+          <el-table-column prop="type" label="订单类型"></el-table-column>
+          <el-table-column prop="memberInfo" label="客户信息"></el-table-column>
+          <el-table-column prop="consignee" label="收货人信息"></el-table-column>
+          <el-table-column prop="realAmount" label="下单金额（元）"></el-table-column>
+          <el-table-column prop="created" label="下单时间"></el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
               <div>
-                <el-button type="text" @click="doOrderDtl(scope.row)"
-                  >查看</el-button
-                >
-                <el-button type="text" @click="doOrderDtl(scope.row)"
-                  >查看</el-button
-                >
-                <el-button type="text" @click="doOrderDtl(scope.row)"
-                  >查看</el-button
-                >
+                <el-button type="text" @click="doOrderDtl(scope.row)">查看</el-button>
+                <el-button type="text" @click="doOrderDtl(scope.row)">查看</el-button>
+                <el-button type="text" @click="doOrderDtl(scope.row)">查看</el-button>
               </div>
             </template>
           </el-table-column>

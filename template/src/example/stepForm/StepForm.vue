@@ -13,29 +13,16 @@
       <!-- 详情视图 开始（可以作为详情与表单的容器） -->
       <detail-view>
         <div class="example-steps">
-          <el-steps
-            :space="300"
-            :active="active"
-            finish-status="success"
-            align-center
-          >
-            <el-step title="步骤1"> </el-step>
+          <el-steps :space="300" :active="active" finish-status="success" align-center>
+            <el-step title="步骤1"></el-step>
             <el-step title="步骤2"></el-step>
             <el-step title="步骤3"></el-step>
             <el-step title="完成"></el-step>
           </el-steps>
         </div>
         <step1 v-if="active === 1" @nextStep="doNextStep"></step1>
-        <step2
-          v-if="active === 2"
-          @nextStep="doNextStep"
-          @prevStep="doPrevStep"
-        ></step2>
-        <step3
-          v-if="active === 3"
-          @submit="doSubmit"
-          @prevStep="doPrevStep"
-        ></step3>
+        <step2 v-if="active === 2" @nextStep="doNextStep" @prevStep="doPrevStep"></step2>
+        <step3 v-if="active === 3" @submit="doSubmit" @prevStep="doPrevStep"></step3>
         <step4 v-if="active === 4"></step4>
       </detail-view>
       <!-- 详情视图 结束 -->
