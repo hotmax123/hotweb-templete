@@ -24,6 +24,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/camelcase': 'off',
 
     'accessor-pairs': 2,
     'array-bracket-spacing': 0,
