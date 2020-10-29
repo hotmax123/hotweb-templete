@@ -1,6 +1,6 @@
 <template>
   <el-form label-width="96px" ref="queryCondition" class="query-condition" @keydown.native="bindFastCode">
-    <el-row class="opened-action-row">
+    <el-row class="opened-action-row" :gutter="20">
       <slot></slot>
       <template v-if="opened && $slots.closed">
         <slot name="closed"></slot>

@@ -1,13 +1,19 @@
 import { Component, Vue } from 'vue-property-decorator'
 import BasicLayout from '@/layouts/BasicLayoutSingle/BasicLayout.vue'
 import { abnormalType } from '@/model/example/AbnormalType'
-import { State } from 'vuex-class'
+import { State, Action } from 'vuex-class'
+import store from '@/store'
 
 @Component({
   components: { BasicLayout }
 })
 export default class MainFrame extends Vue {
   @State('permission') permission: string[]
+  @State('device') device: string
+  @State('sidebar') sidebar: any
+
+  @Action('clear') setClear: () => {}
+  @Action('sidebar') setSidebar: () => {}
   isCollapse: boolean = false
 
   // 获得聚焦菜单
@@ -156,5 +162,16 @@ export default class MainFrame extends Vue {
    */
   doLogout() {
     console.log('change...')
+  }
+  doHeaderClose() {
+    if (this.device === 'mobile') {
+      if (this.sidebar.opened) {
+        store.commit('close_sidebar', { withoutAnimation: true })
+      } else {
+        this.setSidebar()
+      }
+    } else {
+      this.isCollapse = !this.isCollapse
+    }
   }
 }

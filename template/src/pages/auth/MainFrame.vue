@@ -1,29 +1,35 @@
 <template>
   <!-- 此处为布局容器组件，由layouts目录引入，可以选择切换不同的布局 -->
-  <basic-layout>
+  <basic-layout :isCollapse="isCollapse">
     <!-- 页面header 开始 -->
     <template slot="header">
-      <div class="header-left"></div>
-      <el-dropdown class="header-right" trigger="click" @command="doLogout">
-        <div class="user-name">
-          <img src="@/assets/img/common/ic_portrait@2x.png" class="user-name-icon" />
-          <span>小星星</span>
-        </div>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>登出</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+      <div class="header-left" @click="doHeaderClose">
+        <i v-if="!isCollapse" class="iconfont ic-ui-menuunfold hm-click-expand hm-font-20"></i>
+        <i v-else class="iconfont ic-ui-menufold hm-click-expand hm-font-20"></i>
+      </div>
+      <div class="header-right">
+        <el-dropdown trigger="click" @command="doLogout">
+          <div class="user-name">
+            <img src="@/assets/img/common/ic_portrait@2x.png" class="user-name-icon" />
+            <span>小星星</span>
+          </div>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>登出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </template>
     <!-- 页面header 结束 -->
     <!-- 侧边导航 开始 -->
     <template slot="sider">
       <el-menu
-        text-color="#36445A"
-        background-color="#FFFFFF"
+        text-color="#fff"
+        background-color="rgb(48, 65, 86)"
         class="sidebar"
         :unique-opened="false"
         :default-active="activeMenu"
         :collapse="isCollapse"
+        :collapse-transition="false"
       >
         <div v-for="(item, key) in menus" :key="key">
           <router-link :to="item.url" v-if="item.children.length === 0">
@@ -75,6 +81,8 @@
   }
 }
 .header-right {
+  display: flex;
+  align-items: center;
   .user-name {
     display: flex;
     align-items: center;
@@ -88,16 +96,39 @@
     }
   }
 }
+
+/*隐藏文字*/
+/deep/.el-menu--collapse .el-submenu__title span {
+  display: none;
+}
+/*隐藏 > */
+/deep/.el-menu--collapse .el-submenu__title .el-submenu__icon-arrow {
+  display: none;
+}
+/deep/.el-menu {
+  height: 100%;
+  border: none;
+}
+
+// 设置侧边栏宽度时，必须将.el-menu--collapse排除，否则动画效果出现BUG
+/deep/.el-menu:not(.el-menu--collapse) {
+  width: 200px;
+}
 /deep/.el-submenu .el-submenu__title {
   &:hover {
-    background-color: $--color-primary-light-9 !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
   }
 }
 /deep/.el-submenu .el-menu-item {
   line-height: 38px;
   height: 38px;
   &:hover {
-    background-color: $--color-primary-light-9 !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+}
+/deep/.el-menu-item {
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5) !important;
   }
 }
 /deep/.router-link-active {
@@ -105,6 +136,15 @@
     color: $--color-primary !important;
   }
 }
+/deep/.el-icon-arrow-right {
+  right: 0px;
+  margin-top: -5px;
+}
+/deep/.el-submenu .el-menu-item,
+#app .sidebar-container .nest-menu .el-submenu > .el-submenu__title {
+  background-color: #1f2d3d !important;
+}
+
 a {
   text-decoration: none !important;
 }

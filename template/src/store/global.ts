@@ -1,19 +1,26 @@
 import User from '@/model/auth/User'
 import { Commit, ActionTree } from 'vuex'
+import Cookies from 'js-cookie'
 
 export interface State {
   user: Nullable<User>
   permission: string[] // 权限列表
+  isCollapse: boolean
+  sidebar: any
+  device: string
 }
 
 export const state: State = {
   user: null,
-  permission: []
+  permission: [],
+  isCollapse: false,
+  sidebar: {
+    opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,
+    withoutAnimation: false
+  },
+  device: 'desktop'
 }
 
-/**
- * 通常不直接调用这个方法
- */
 export const mutations = {
   user(state: State, user: User) {
     state.user = user
@@ -27,6 +34,26 @@ export const mutations = {
   clear(state: State) {
     state.user = null
     state.permission = []
+  },
+  isCollapse(state: State, isCollapse: boolean) {
+    state.isCollapse = isCollapse
+  },
+  sidebar(state: State) {
+    state.sidebar.opened = !state.sidebar.opened
+    state.sidebar.withoutAnimation = false
+    if (state.sidebar.opened) {
+      Cookies.set('sidebarStatus', 1)
+    } else {
+      Cookies.set('sidebarStatus', 0)
+    }
+  },
+  close_sidebar(state: State, withoutAnimation: boolean) {
+    Cookies.set('sidebarStatus', 0)
+    state.sidebar.opened = false
+    state.sidebar.withoutAnimation = withoutAnimation
+  },
+  device: (state: State, device: string) => {
+    state.device = device
   }
 }
 
@@ -44,6 +71,18 @@ export const actions: ActionTree<State, any> = {
   },
   clear(context: { commit: Commit }) {
     context.commit('clear')
+  },
+  isCollapse(context: { commit: Commit }, isCollapse: boolean) {
+    context.commit('isCollapse', isCollapse)
+  },
+  sidebar(context: { commit: Commit }) {
+    context.commit('sidebar')
+  },
+  closeSideBar(context: { commit: Commit }, withoutAnimation: boolean) {
+    context.commit('close_sidebar', withoutAnimation)
+  },
+  device(context: { commit: Commit }, device: string) {
+    context.commit('device', device)
   }
 }
 

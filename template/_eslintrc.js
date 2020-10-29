@@ -23,6 +23,8 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-namespace': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+
     'accessor-pairs': 2,
     'array-bracket-spacing': 0,
     'block-scoped-var': 0,
@@ -208,6 +210,7 @@ module.exports = {
     'vars-on-top': 0,
     'wrap-iife': [2, 'any'],
     'wrap-regex': 0,
-    'yoda': [2, 'never']
+    'yoda': [2, 'never'],
+    'no-empty-function': 'off'
   }
 };

@@ -22,6 +22,19 @@ module.exports = {
         })
       )
     }
+    return {
+      resolve: {
+        alias: {
+          'hotweb-ui': 'hotweb-ui'
+        }
+      },
+      externals: {
+        'vue': 'Vue',
+        'vue-router': 'VueRouter',
+        'vuex': 'Vuex',
+        'axios': 'axios'
+      }
+    }
   },
   // chainWebpack: config => {
   //   config

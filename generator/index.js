@@ -15,6 +15,7 @@ module.exports = (api, options, rootOptions) => {
             "axios": "^0.19.2",
             "core-js": "^3.6.5",
             "hotweb-ui": "1.0.1",
+            "js-cookie": "^2.2.1",
             "nprogress": "^0.2.0",
             "vue": "^2.6.11",
             "vue-class-component": "^7.2.5",

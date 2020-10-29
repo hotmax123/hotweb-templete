@@ -1,9 +1,10 @@
 <template>
-  <div class="basic-layout">
-    <div class="basic-layout-sider">
-      <div class="logo">
-        <p>后台管理系统</p>
-      </div>
+  <div class="basic-layout" :class="classObj">
+    <div v-if="device === 'mobile' && sidebar.opened" class="drawer-bg" @click="doClickOutside" />
+    <div class="basic-layout-sider" :class="sliderClass">
+      <!-- <div class="logo hm-flex-row-center" v-if="!isCollapse"> -->
+      <!-- <p>CRM后台管理系统</p> -->
+      <!-- </div> -->
       <slot name="sider"></slot>
     </div>
     <div class="basic-layout-container">
@@ -27,25 +28,8 @@
   .basic-layout-sider {
     scrollbar-width: none; /* firefox */
     -ms-overflow-style: none; /* IE 10+ */
-    width: 200px;
     height: 100%;
-    flex: 0 0 auto;
-    background: #fff;
     overflow-y: auto;
-    .logo {
-      height: 60px;
-      line-height: 60px;
-      color: #000;
-      margin-left: 20px;
-      font-weight: 600;
-      font-size: 20px;
-    }
-    .el-menu-vertical-demo {
-      width: 200px;
-    }
-    /deep/.el-menu {
-      border: none;
-    }
   }
 
   .basic-layout-sider::-webkit-scrollbar {
@@ -70,10 +54,32 @@
       width: 100%;
       height: calc(100% - 64px);
       box-sizing: border-box;
-      padding: 20px;
+      padding: 10px;
       background-color: #f0f2f6;
       overflow: auto;
     }
+  }
+}
+.mobile {
+  position: relative;
+
+  .basic-layout-sider {
+    position: fixed;
+    z-index: 10000;
+  }
+  .drawer-bg {
+    background: #000;
+    opacity: 0.3;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+  }
+  .hideSidebar {
+    pointer-events: none;
+    transition-duration: 0.3s;
+    transform: translate(-100%, 0);
   }
 }
 </style>

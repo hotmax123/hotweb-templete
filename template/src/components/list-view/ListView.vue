@@ -24,6 +24,12 @@
       @selection-change="doSelectionChange"
       @sort-change="doSortChange"
     >
+      <div v-if="!data || data.length === 0" slot="empty">
+        <slot name="empty">
+          <img src="@/assets/img/common/img_blank.png" style="width:140px; height:140px" />
+          <p>{{ emptyText || '暂无数据' }}</p>
+        </slot>
+      </div>
       <el-table-column v-if="selectable" type="selection" :selectable="checkSelectable" :reserve-selection="reserveSelection"></el-table-column>
       <slot></slot>
     </el-table>
