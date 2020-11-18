@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build",
+    "dev": "vue-cli-service serve --mode development",
+    "test": "vue-cli-service build --mode test",
     "uat": "vue-cli-service build --mode uat",
-    "production": "vue-cli-service build --mode production",
-    "dev": "vue-cli-service serve"
+    "production": "vue-cli-service build --mode production"
   },
   "dependencies": {
     "@types/nprogress": "^0.2.0",
