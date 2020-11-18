@@ -2,7 +2,6 @@
   <div class="basic-layout" :class="classObj">
     <div v-if="device === 'mobile' && sidebar.opened" class="drawer-bg" @click="doClickOutside" />
     <div class="basic-layout-sider" :class="sliderClass">
-      
       <slot name="sider"></slot>
     </div>
     <div class="basic-layout-container">
