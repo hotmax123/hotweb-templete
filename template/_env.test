@@ -1,0 +1,4 @@
+NODE_ENV = production
+
+ENV = 'test'
+VUE_APP_BASEURL = 'http://120.55.47.244'
