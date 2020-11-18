@@ -4,8 +4,8 @@
     <!-- 页面header 开始 -->
     <template slot="header">
       <div class="header-left" @click="doHeaderClose">
-        <i v-if="!isCollapse" class="iconfont ic-ui-menuunfold hm-click-expand hm-font-20"></i>
-        <i v-else class="iconfont ic-ui-menufold hm-click-expand hm-font-20"></i>
+        <i v-if="!isCollapse" class="iconfont ic-ui-menuunfold" style="font-size: 20px"></i>
+        <i v-else class="iconfont ic-ui-menufold" style="font-size: 20px"></i>
       </div>
       <div class="header-right">
         <el-dropdown trigger="click" @command="doLogout">
