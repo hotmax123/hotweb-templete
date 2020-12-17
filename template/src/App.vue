@@ -9,7 +9,6 @@ html,
 body {
   width: 100%;
   min-height: 100%;
-  min-width: 1024px;
   overflow-x: auto;
   -webkit-font-smoothing: antialiased;
 }
